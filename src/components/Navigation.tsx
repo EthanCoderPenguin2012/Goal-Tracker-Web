@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -16,6 +18,7 @@ import {
   useTheme,
   useColorScheme,
   alpha,
+  Theme,
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
@@ -81,8 +84,8 @@ export default function Navigation() {
         mx: 'auto',
         maxWidth: 1200,
         backdropFilter: 'blur(8px)',
-        backgroundColor: (theme) => alpha(theme.palette.surface.main, 0.8),
-        border: (theme) => `1px solid ${alpha(theme.palette.outline.main, 0.1)}`,
+        backgroundColor: (theme: Theme) => alpha(theme.palette.surface.main, 0.8),
+        border: (theme: Theme) => `1px solid ${alpha(theme.palette.outline.main, 0.1)}`,
       }}
     >
       <Container maxWidth="xl">
@@ -173,7 +176,7 @@ export default function Navigation() {
                   mt: 1.5,
                   backgroundColor: 'surface.containerHigh',
                   backdropFilter: 'blur(8px)',
-                  border: (theme) => `1px solid ${alpha(theme.palette.outline.main, 0.1)}`,
+                  border: (theme: Theme) => `1px solid ${alpha(theme.palette.outline.main, 0.1)}`,
                 },
               }}
             >
@@ -310,7 +313,7 @@ export default function Navigation() {
                   sx={{
                     bgcolor: 'primary.main',
                     transition: 'all var(--md3-motion-duration-short) var(--md3-motion-easing-easeInOut)',
-                    border: (theme) => `2px solid ${alpha(theme.palette.primary.main, 0.2)}`,
+                    border: (theme: Theme) => `2px solid ${alpha(theme.palette.primary.main, 0.2)}`,
                   }}
                 />
               </IconButton>
@@ -322,10 +325,10 @@ export default function Navigation() {
                   borderRadius: 2,
                   backgroundColor: 'surface.containerHigh',
                   backdropFilter: 'blur(8px)',
-                  border: (theme) => `1px solid ${alpha(theme.palette.outline.main, 0.1)}`,
+                  border: (theme: Theme) => `1px solid ${alpha(theme.palette.outline.main, 0.1)}`,
                 },
               }}
-              id="menu-appbar"
+              id="menu-user"
               anchorEl={anchorElUser}
               anchorOrigin={{
                 vertical: 'top',
